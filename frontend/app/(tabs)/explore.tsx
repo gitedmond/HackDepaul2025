@@ -7,6 +7,7 @@ import ParallaxScrollView from '@/components/ParallaxScrollView';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
 import { IconSymbol } from '@/components/ui/IconSymbol';
+import DeckSwiper from '../../components/DeckSwiper'; // Added import
 
 export default function TabTwoScreen() {
   return (
@@ -92,6 +93,15 @@ export default function TabTwoScreen() {
           ),
         })}
       </Collapsible>
+      {/* Added DeckSwiper section */}
+      <Collapsible title="Interactive Card Swiper">
+        <ThemedView style={styles.swiperContainer}>
+          <DeckSwiper />
+        </ThemedView>
+        <ThemedText style={{ marginTop: 8 }}>
+          This is an example of the react-native-deck-swiper component. Try swiping the cards!
+        </ThemedText>
+      </Collapsible>
     </ParallaxScrollView>
   );
 }
@@ -107,4 +117,8 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     gap: 8,
   },
+  swiperContainer: { // Added style for the swiper container
+    height: 400, // Explicit height for the swiper to render correctly
+    marginVertical: 16,
+  }
 });
